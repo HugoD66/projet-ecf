@@ -1,14 +1,73 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Mangez-Sain!{% endblock %}
 
 {% block body %}
-    <div>
-        {% if app.user %}
-            <button type="button" class="btn"><a href="{{ path('app_logout') }}">Déconnexion</a></button>
+    <section>
+        <div class="intro">
+            <img alt="dessin gateau" src="{{ asset('pictures/image-intro/img-intro.png') }}">
+        </div>
+        <div class="services" id="btn-href-services">
+            <h2 class="titre-sec">Mes services</h2>
+            <p>Dans un cadre calme et apaisant, mon engagement est de vous donner les clefs afin d’atteindre vos objectifs et découvrir l’alimentation qui vous permettra de prendre plaisir à manger gourmand, sain et équilibré.</p>
+        </div>
+        <div class="promo">
+            <div class="promo1">
+                <img src="{{ asset('pictures/section-promo/plan-perso.jpg') }}" alt="Cerveau alimenté de légumes">
+                <div class="explain">
+                    <h3>Plan diététique personnalisé</h3>
+                    <p>Pas de régime, juste du rééquilibrage alimentaire.</br>Pas de sensation de faim la méthode s’adapte</br> à votre rythme de vie.</p>
+                </div>
+            </div>
+            <div class="promo2">
+                <div class="explain">
+                    <h3>Coaching personnalisé</h3>
+                        <p>Vous, votre histoire, votre mode de vie </br>et vos choix requièrent une alimentation unique.</p>
+                </div>
+                <img src="{{ asset('pictures/section-promo/coach-perso.jpg') }}" alt="Cerveau alimenté de légumes">
+            </div>
+            <div class="promo3">
+                <img src="{{ asset('pictures/section-promo/suivi-diet.jpg') }}" alt="Cerveau alimenté de légumes">
+                <div class="explain">
+                    <h3>Suivi en diététique et nutrition</h3>
+                        <p>Je vous propose de vous accompagner toutes les semaines </br>pour perdre du poids (600g à 1kg / semaine). </br>Une perte de poids durable avec les phases de </br>stabilisation et d’entretien.</p>
+                </div>
+            </div>
+            <div class="promo4">
+                <div class="explain">
+                    <h3>Pas besoin de sport</h3>
+                        <p>Même s’il est vrai que le combo sport + alimentation montre </br>des résultats impressionnants et plus rapides, ce n’est pas une </br>condition obligatoire pour perdre du poids</p>
+                </div>
+                <img src="{{ asset('pictures/section-promo/sport-complique.jpg') }}" alt="Cerveau alimenté de légumes">
+            </div>
+        </div>
 
-        {% else %}
-            <button type="button" class="btn"><a href="{{ path('app_login') }}">Connexion</a></button>
-        {% endif %}
-    </div>
+        <div class="apropos">
+            <h2>A Propos</h2>
+
+            <h3>Mes différents rendez-vous</h3>
+            <ul>
+                <li>La consultation initiale : durée 45min
+                Je vous écoute afin de remplir votre bilan nutritionnel personnalisé et j’apprends à vous connaitre. Votre impédance est réalisée. Ensuite, nous élaborons ensemble un premier programme alimentaire personnalisé et adapté et fixons les premiers objectifs.</li>
+                <li>Les consultations de suivi : durée 30min
+                Vous décidez de la fréquence de ces consultations (conseillé : 1er suivi 15jours ; les autres mensuels). Nous analyserons ensemble votre évolution (impédance), vos difficultés rencontrées et apporterons les modifications nécessaires au programme initial. De nouveaux objectifs sont définis.</li>
+                <li>Aide nutritionnelle lors de vos achats alimentaires :
+                Vous avez besoin de conseils pendant vos courses ? Je suis là ! Vous avez la possibilitée de nous contacter par telephone: <a href="tel:+33468040404">04 68 04 04 04</a></li>
+            </ul>
+            <h3>"Concernant ma mutuelle ?!"</h3>
+            <ul>
+                <li>Je renseigne mon profil et précise mes besoins</br>
+                    Ainsi les assureurs pourront vous proposer des offres adaptées à vos besoins et à votre budget.
+                    Vous pourrez à tout moment revenir sur les différentes questions afin d’en modifier les réponses. Simple & rapide, cette étape n’excède pas 2 minutes</li>
+                <li>Je compare les offres des assureurs</br>
+                    Les garanties sont classées par prix et correspondent au profil renseigné et aux besoins souhaités.
+                    Notre impartialité est totale. Nous ne privilégions aucun assureur.</li>
+                <li>Je choisi parmi l'une des offres proposées</br>
+                    Après comparaison approfondie, vous pourrez entrer directement en contact avec la compagnie d’assurance (téléphone, e-mail…) ou souscrire l’une des offres sur le site internet de cette dernière.</li>
+            </ul>
+        </div>
+        <div class="recettes">
+            <h2>Mes dernières recettes</h2>
+        </div>
+    </section>
 {% endblock %}

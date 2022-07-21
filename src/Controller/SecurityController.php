@@ -23,8 +23,8 @@ class SecurityController extends AbstractController
     }
 
     #[Route(path: '/logout', name: 'app_logout')]
-    public function logout(): Response
+    public function logout(): void
     {
-    return$this->render('home/home.html.twig');
+        throw new \Exception('Don\'t forget to activate logout in security.yaml');
     }
 }

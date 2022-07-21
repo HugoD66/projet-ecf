@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="FR-fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <!--
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        -->
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <title>{% block title %}Mangez-Sain!{% endblock %}</title>
+        <link rel="icon" href={{ asset('pictures/icone-logo/logo.png') }}>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -16,8 +13,37 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}
 
-        {% endblock %}
+    <header>
+
+        <a  href="{{ path('app_home') }}"><img alt="logo" src="{{ asset('pictures/icone-logo/logo-back-beige.png') }}" width="250" height="200"></a>
+
+        <div class="navbar">
+
+            {% if app.user %}
+                <button type="button" class="btn"><a href="{{ path('app_logout') }}">Déconnexion</a></button>
+            {% else %}
+                <button type="button" class="btn"><a href="{{ path('app_login') }}">Connexion</a></button>
+            {% endif %}
+
+            <!--<button type="button" class="btn"><a href="{{ path('app_register') }}">Enregistrement</a></button>
+-->
+            <button type="button" class="btn"> Nous contacter ? </button>
+
+            <button type="button" class="btn"> Nos formules</button>
+
+        </div>
+        <a href="#btn-href-services">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+            </svg>
+        </a>
+    </header>
+    {% block body %}
+    {% endblock %}
+
+    <footer>
+
+    </footer>
     </body>
 </html>
