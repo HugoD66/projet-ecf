@@ -32,7 +32,6 @@ header {
       }
   }
 }
-
 section {
   background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
   .intro {
@@ -74,17 +73,65 @@ section {
       max-width: 400px;
     }
   }
-
-
+  .presentation {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin-top: 35px;
+    p {
+      font-weight: 600;
+      font-size: large;
+      text-align: justify;
+    }
+    .button-33 {
+      margin: 30px;
+      background-color: #c2fbd7;
+      border-radius: 100px;
+      box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+      color: green;
+      cursor: pointer;
+      display: inline-block;
+      font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+      padding: 7px 20px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 250ms;
+      border: 0;
+      font-size: 16px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+    .button-33:hover {
+      box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+      transform: scale(1.05) rotate(-1deg);
+    }
+  }
 }
-
-
-
-
-
-footer {
-  position: fixed;
+.profilSandrine {
+  background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
+  img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+  }
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   bottom: 0;
+  background-color: $color6;
+  img {
+    width: 120px;
+    height:120px;
+  }
+  .contact1 {
+    text-align: end;
+  }
+  .contact2 {
+    text-align: center;
+  }
 }
 
 
