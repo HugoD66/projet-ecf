@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class RedirectRegisterController extends AbstractController
 {
-    #[Route('/redirect/register', name: 'app_redirect_register')]
+    #[Route('/redirect-register', name: 'app_redirect_register')]
     public function index(): Response
     {
         return $this->render('registration/redirectregister.html.twig', [

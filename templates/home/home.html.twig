@@ -15,28 +15,28 @@
             <div class="promo1">
                 <img src="{{ asset('pictures/section-promo/plan-perso.jpg') }}" alt="Cerveau alimenté de légumes">
                 <div class="explain">
-                    <h3>Plan diététique personnalisé</h3>
-                    <p>Pas de régime, juste du rééquilibrage alimentaire.</br>Pas de sensation de faim la méthode s’adapte</br> à votre rythme de vie.</p>
+                    <h3>Plan  personnalisé</h3>
+                    <p>Pas de régime, juste du rééquilibrage</br> alimentaire. Pas de sensation de </br>faim la méthode s’adapte à</br> votre rythme de vie.</p>
                 </div>
             </div>
             <div class="promo2">
                 <div class="explain">
                     <h3>Coaching personnalisé</h3>
-                        <p>Vous, votre histoire, votre mode de vie </br>et vos choix requièrent une alimentation unique.</p>
+                        <p>Vous, votre histoire, votre mode</br> de vie et vos choix requièrent</br> une alimentation unique.</p>
                 </div>
                 <img src="{{ asset('pictures/section-promo/coach-perso.jpg') }}" alt="Tasse a café">
             </div>
             <div class="promo3">
                 <img src="{{ asset('pictures/section-promo/suivi-diet.jpg') }}" alt="Plat de pasta">
                 <div class="explain">
-                    <h3>Suivi en diététique et nutrition</h3>
-                        <p>Je vous propose de vous accompagner toutes les semaines </br>pour perdre du poids (600g à 1kg / semaine). </br>Une perte de poids durable avec les phases de </br>stabilisation et d’entretien.</p>
+                    <h3>Suivi en diététique/nutrition</h3>
+                        <p>Je vous propose de vous accompagner </br>toutes les semaines pour perdre </br>du poids (600g à 1kg / semaine). </br>Une perte de poids durable avec </br>les phases de stabilisation </br>et d’entretien.</p>
                 </div>
             </div>
             <div class="promo4">
                 <div class="explain">
                     <h3>Pas besoin de sport</h3>
-                        <p>Même s’il est vrai que le combo sport + alimentation montre </br>des résultats impressionnants et plus rapides, ce n’est pas une </br>condition obligatoire pour perdre du poids</p>
+                        <p>Il est vrai que le combo sport + alimentation </br>montre des résultats impressionnants</br> et plus rapides, ce n’est pas une </br>condition obligatoire pour </br>perdre du poids</p>
                 </div>
                 <img src="{{ asset('pictures/section-promo/sport-complique.jpg') }}" alt="Sport compliqué">
             </div>
@@ -67,9 +67,34 @@
             </ul>
         </div>
         <div class="presentation">
-            <p>Vous désirez en savoir plus sur moi et mon parcours ? </br>Je vous invite à visiter cette page !  </p>
-            <button class="button-33" role="button"><a href="{{ path('app_sandrine_profil') }}">Mon parcours</a></button>
+            <p>Vous désirez en savoir plus sur mon parcours?</br>Je vous invite à visiter cette page !  </p>
+            <button class="button-33" role="button"><a href="{{ path('app_sandrine_profil') }}">Cliquez ici !</a></button>
         </div>
+        <h2>Nous contacter</h2>
+
+        <div class="mentionPolitiqueContact">
+            <div class="inscription">
+                <p>Si vous souhaitez en savoir plus sur notre programme, le suivre ou même poser des questions concernant les forfaits, je vous invite à nous joindre par
+                    formulaire grâce au bouton ci-dessous. </p>
+                {% if  app.user is not null %}
+                    <button class="button-33" role="button"><a href="{{ path('app_deja_inscrit') }}">Inscription</a></button>
+                {% else %}
+                    <button class="button-33" role="button"><a href="{{ path('app_register') }}">Inscription</a></button>
+                {% endif %}
+            </div>
+            <div class="mentionPolitique">
+                <p>Des inquiétudes concernant vos <b>données?</b> Vous pouvez parcourir notre politique de confidentialitée ainsi que nos mentions légales
+                grâce aux liens suivants :</p>
+                <div class="buttons">
+                    <button class="button-33" type="button"><a href="{{ path('app_politique') }}">Pol. Confidentialitee</a></button>
+                    <button class="button-33" type="button"><a href="{{ path('app_mentions_legales') }}">Mentions Légales</a></button>
+                </div>
+            </div>
+        </div>
+
+
+
+
         <div class="recettes">
             <h2>Mes dernières recettes</h2>
             azeazeazeaez

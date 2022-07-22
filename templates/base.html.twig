@@ -28,19 +28,22 @@
 
             <!--<button type="button" class="btn"><a href="{{ path('app_register') }}">Enregistrement</a></button>
 -->
-            <button type="button" class="btn"> Nous contacter ? </button>
+            <button type="button" class="btn"> Contact </button>
 
-            <button type="button" class="btn"> Nos formules</button>
+            <button type="button" class="btn"  id="btn-up-circle"> Nos formules</button>
 
         </div>
-        {% if path('app_home') == true %}
-        <a href="#btn-href-services">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
-            </svg>
-        </a>
+        {% if path('app_home') == false %}
+            <a href="{{ path('app_home') }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                </svg>
+            </a>
         {% else %}
-            <a href="#btn-href-services" style="display: none">
+            <a href="#btn-href-services">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                </svg>
             </a>
         {% endif %}
     </header>
@@ -49,17 +52,25 @@
 
     <footer>
         <div class="footer">
-            <div class="contact1">
-                Hôtel de Ville, Esplanade J.-M. Louvel</br>14027 CAEN cedex 9
+            <div class="contact">
+                <a target="_blank" href="https://www.google.com/search?q=caen&rlz=1C1ONGR_frFR996FR996&oq=caen&aqs=chrome.0.69i59j46i433i512j0i512j0i433i457i512j0i512j0i433i512j0i512j69i60.578j0j7&sourceid=chrome&ie=UTF-8">
+                Esplanade J.-M. </br>Louvel 14027 CAEN cedex 9
+                </a>
             </div>
             <img src="{{ asset('pictures/idee-footer/studi.jpg') }}" alt="Studi">
             <div class="title">
-                Mangez bien, </br>c'est Manger Sain !
+                Manger sain, </br>c'est Manger bien !
             </div>
-            <img src="{{ asset('pictures/idee-footer/logo-back-green.png') }}" alt="Studi">
-            <div class="teletmail">
-                06 06 06 06 06</br>
-                contact@nutrition.com
+            <img src="{{ asset('pictures/idee-footer/logo-back-green.png') }}" alt="Logo fond vert">
+            <div class="teletmail"><a href="tel:+33468040404">04 68 04 04 04</a></br>
+                <a href="mailto:contact@nutrition.com">contact@nutrition.com</a>
+            </div>
+            <div class="upPage">
+                <a href="#btn-up-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>
