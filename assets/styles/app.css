@@ -11199,12 +11199,12 @@ section .promo .promo1, section .promo .promo3 {
   margin: auto;
 }
 section .promo .promo2, section .promo .promo4 {
-  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: end;
+  margin: auto 12% auto auto;
 }
 section .promo img {
   width: 350px;

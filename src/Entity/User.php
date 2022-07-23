@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -31,6 +33,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $username = null;
+
+
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Regime $regime = null;
+
+    #[ORM\OneToMany(mappedBy: 'userAllergene', targetEntity: Allergene::class)]
+    private Collection $allergenes;
+
+    public function __construct()
+    {
+        $this->allergenes = new ArrayCollection();
+    }
+
+
+
 
     public function getId(): ?int
     {
@@ -113,4 +133,61 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(?string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+
+
+    public function getRegime(): ?Regime
+    {
+        return $this->regime;
+    }
+
+    public function setRegime(?Regime $regime): self
+    {
+        $this->regime = $regime;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Allergene>
+     */
+    public function getAllergenes(): Collection
+    {
+        return $this->allergenes;
+    }
+
+    public function addAllergene(Allergene $allergene): self
+    {
+        if (!$this->allergenes->contains($allergene)) {
+            $this->allergenes[] = $allergene;
+            $allergene->setUserAllergene($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAllergene(Allergene $allergene): self
+    {
+        if ($this->allergenes->removeElement($allergene)) {
+            // set the owning side to null (unless already changed)
+            if ($allergene->getUserAllergene() === $this) {
+                $allergene->setUserAllergene(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
