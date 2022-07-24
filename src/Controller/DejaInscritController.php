@@ -13,6 +13,7 @@ class DejaInscritController extends AbstractController
     {
         return $this->render('registration/dejainscrit.html.twig', [
             'controller_name' => 'DejaInscritController',
-        ]);
+            'title' => 'Mangez-Sain! Déjas Inscrit'
+            ]);
     }
 }

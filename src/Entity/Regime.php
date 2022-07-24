@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\RegimeRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: RegimeRepository::class)]
@@ -15,6 +16,9 @@ class Regime
 
     #[ORM\Column(length: 255)]
     private ?string $title = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $description = null;
 
     public function getId(): ?int
     {
@@ -31,5 +35,21 @@ class Regime
         $this->title = $title;
 
         return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+    public function __toString()
+    {
+        return $this->title;
     }
 }

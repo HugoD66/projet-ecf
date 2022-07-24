@@ -13,6 +13,7 @@ class MentionsLegalesController extends AbstractController
     {
         return $this->render('politiquesmentions/mentions.html.twig', [
             'controller_name' => 'MentionsLegalesController',
+            'title' => 'Mention légales Mangez-Sain!'
         ]);
     }
 }

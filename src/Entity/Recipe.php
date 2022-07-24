@@ -7,6 +7,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 #[ORM\Entity(repositoryClass: RecipeRepository::class)]
 class Recipe
@@ -32,11 +35,10 @@ class Recipe
     private ?int $heatTime = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $ingrédients = null;
+    private ?string $ingredients = null;
 
     #[ORM\Column(length: 255)]
     private ?string $steps = null;
-
 
 
     #[ORM\Column(type: Types::OBJECT, nullable: true)]
@@ -47,6 +49,15 @@ class Recipe
 
     #[ORM\ManyToMany(targetEntity: Regime::class)]
     private Collection $regime;
+
+    #[ORM\Column(length: 255)]
+    #[Assert\Image(
+        minWidth: 200,
+        maxWidth: 400,
+        maxHeight: 400,
+        minHeight: 200,
+    )]
+    private ?string $picture = null;
 
     public function __construct()
     {
@@ -119,14 +130,14 @@ class Recipe
         return $this;
     }
 
-    public function getIngrédients(): ?string
+    public function getIngredients(): ?string
     {
-        return $this->ingrédients;
+        return $this->ingredients;
     }
 
-    public function setIngrédients(string $ingrédients): self
+    public function setIngredients(string $ingredients): self
     {
-        $this->ingrédients = $ingrédients;
+        $this->ingredients = $ingredients;
 
         return $this;
     }
@@ -205,5 +216,21 @@ class Recipe
         $this->regime->removeElement($regime);
 
         return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture($picture = null)
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+    public function __toString()
+    {
+        return $this->title;
     }
 }

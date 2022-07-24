@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+
+
+
+
+
+    <div class="connexion">
+        {{ user }}
+
+        <ul>
+            {% for recipe in recipes %}
+                <li>{{ recipe.cookingTime }}</li>
+            {% endfor %}
+        </ul>
+
+
+        {{ form(form) }}
+    </div>
+{% endblock %}

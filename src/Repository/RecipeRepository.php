@@ -63,4 +63,18 @@ class RecipeRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+    public function getRecipeList()
+    {
+        return $this->createQueryBuilder('u')
+            ->select('u.id, u.title, u.description')
+            ->getQuery()
+            ->getResult();
+    }
+    public function getRecipe()
+    {
+        return $this->createQueryBuilder('p')
+            ->select('')
+            ->getQuery()
+            ->getResult();
+    }
 }

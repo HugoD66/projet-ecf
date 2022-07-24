@@ -13,7 +13,7 @@ class RedirectRegisterController extends AbstractController
     {
         return $this->render('registration/redirectregister.html.twig', [
             'controller_name' => 'RedirectRegisterController',
-            'title' => 'Redirection Enregistrement'
+            'title' => 'Mangez-Sain! Redirection Enregistrement'
         ]);
     }
 }

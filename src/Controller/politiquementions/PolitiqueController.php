@@ -13,6 +13,7 @@ class PolitiqueController extends AbstractController
     {
         return $this->render('politiquesmentions/politique.html.twig', [
             'controller_name' => 'PolitiqueController',
+            'title' => 'Mangez-Sain! Politique de confidentialitée'
         ]);
     }
 }

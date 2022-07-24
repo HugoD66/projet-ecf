@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\AllergeneRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AllergeneRepository::class)]
@@ -20,6 +21,9 @@ class Allergene
 
     #[ORM\ManyToOne(inversedBy: 'allergenes')]
     private ?User $userAllergene = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $description = null;
 
     public function __construct()
     {
@@ -40,13 +44,14 @@ class Allergene
     }
 
     public function addTitle(Recipe $title): self
-    {
+   {
         if (!$this->title->contains($title)) {
             $this->title[] = $title;
         }
 
         return $this;
     }
+
 
     public function removeTitle(Recipe $title): self
     {
@@ -66,4 +71,17 @@ class Allergene
 
         return $this;
     }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
 }

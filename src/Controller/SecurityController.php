@@ -19,6 +19,7 @@ class SecurityController extends AbstractController
         return $this->render('registration/login.html.twig', [
             'last_username' => $lastUsername,
             'error'         => $error,
+            'title'         => 'Mangez-Sain! Connexion'
         ]);
     }
 

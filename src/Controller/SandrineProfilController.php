@@ -13,6 +13,7 @@ class SandrineProfilController extends AbstractController
     {
         return $this->render('sandrine_profil/sandrine_profil.html.twig', [
             'controller_name' => 'SandrineProfilController',
+            'title' => 'Mangez-sain! Profil Sandrine'
         ]);
     }
 }
