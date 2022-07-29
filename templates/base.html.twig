@@ -29,12 +29,16 @@
 
             <button type="button" class="btn"> <a href="{{ path('app_contact_us') }}">Contact </a></button>
 
-            {%  if is_granted('ROLE_ADMIN') %}
-                <button type="button" class="btn"><a href="{{ path('app_admin') }}">Votre compte</a></button>
-            {% elseif is_granted('ROLE_PATIENT') %}
-                <button type="button" class="btn"><a href="{{ path('app_patient') }}">Votre compte</a></button>
-            {% elseif is_granted('ROLE_USER') %}
-                <button type="button" class="btn"><a href="{{ path('app_user') }}">Votre compte</a></button>
+            {% if app.user %}
+                {%  if is_granted('ROLE_ADMIN') %}
+                    <button type="button" class="btn"><a href="{{ path('app_admin', { 'id': utilisateur.id}) }}">Votre compte</a></button>
+                {% elseif is_granted('ROLE_PATIENT') %}
+                    <button type="button" class="btn"><a href="{{ path('app_patient', { 'id': utilisateur.id}) }}">Votre compte</a></button>
+                {% elseif is_granted('ROLE_USER') %}
+                    <button type="button" class="btn"><a href="{{ path('app_user', { 'id': utilisateur.id}) }}">Votre compte</a></button>
+                {% endif %}
+            {% else %}
+
             {% endif %}
 
         </div>

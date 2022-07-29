@@ -15,11 +15,13 @@ class RecipeController extends AbstractController
     {
         $recipe = $doctrine->getRepository(Recipe::class)->find($id);
 
+        $utilisateur = $this->getUser();
 
 
         return $this->render('recipe/recipe-id.html.twig', [
             'title' => 'Mangez-Sain ! Recette',
-             'id' => $recipe
+             'id' => $recipe,
+            'utilisateur' => $utilisateur,
 
         ]);
     }

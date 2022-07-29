@@ -11,9 +11,13 @@ class SandrineProfilController extends AbstractController
     #[Route('/sandrine/profil', name: 'app_sandrine_profil')]
     public function index(): Response
     {
+        $utilisateur = $this->getUser();
+
         return $this->render('sandrine_profil/sandrine_profil.html.twig', [
             'controller_name' => 'SandrineProfilController',
-            'title' => 'Mangez-sain! Profil Sandrine'
+            'title' => 'Mangez-sain! Profil Sandrine',
+            'utilisateur' => $utilisateur,
+
         ]);
     }
 }

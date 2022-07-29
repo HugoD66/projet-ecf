@@ -14,13 +14,14 @@ class AdminController extends AbstractController
     #[Route('/admin/{id}', name: 'app_admin')]
     public function index(ManagerRegistry $doctrine,int $id): Response
     {
-        $user = $this->getUser();
+        $utilisateur = $this->getUser();
 
         $user = $doctrine->getRepository(User::class)->find($id);
         $contact = $doctrine->getRepository(ContactUs::class)->getContactUsList();
 
         return $this->render('profil/profil.html.twig', [
             'title' => 'Mangez-Sain! Profil',
+            'utilisateur' => $utilisateur,
             'user' => $user,
             'contact' => $contact
             ]);

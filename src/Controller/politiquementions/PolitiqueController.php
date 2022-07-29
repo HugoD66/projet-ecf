@@ -11,9 +11,13 @@ class PolitiqueController extends AbstractController
     #[Route('/politique-confidentialitee', name: 'app_politique')]
     public function index(): Response
     {
+        $utilisateur = $this->getUser();
+
         return $this->render('politiquesmentions/politique.html.twig', [
             'controller_name' => 'PolitiqueController',
-            'title' => 'Mangez-Sain! Politique de confidentialitée'
+            'title' => 'Mangez-Sain! Politique de confidentialitée',
+            'utilisateur' => $utilisateur,
+
         ]);
     }
 }

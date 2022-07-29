@@ -11,8 +11,12 @@ class PatientController extends AbstractController
     #[Route('/patient', name: 'app_patient')]
     public function index(): Response
     {
+        $utilisateur = $this->getUser();
+
         return $this->render('gestion/patient.html.twig', [
             'controller_name' => 'PatientController',
+            'utilisateur' => $utilisateur,
+
         ]);
     }
 }

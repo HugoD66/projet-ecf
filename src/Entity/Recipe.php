@@ -44,8 +44,7 @@ class Recipe
     #[ORM\Column(type: Types::OBJECT, nullable: true)]
     private ?object $regimeList = null;
 
-    #[ORM\ManyToMany(targetEntity: Allergene::class, mappedBy: 'title')]
-    private Collection $allergene;
+
 
     #[ORM\ManyToMany(targetEntity: Regime::class)]
     private Collection $regime;
@@ -61,7 +60,6 @@ class Recipe
 
     public function __construct()
     {
-        $this->allergene = new ArrayCollection();
         $this->regime = new ArrayCollection();
     }
 
@@ -167,32 +165,6 @@ class Recipe
         return $this;
     }
 
-    /**
-     * @return Collection<int, Allergene>
-     */
-    public function getAllergene(): Collection
-    {
-        return $this->allergene;
-    }
-
-    public function addAllergene(Allergene $allergene): self
-    {
-        if (!$this->allergene->contains($allergene)) {
-            $this->allergene[] = $allergene;
-            $allergene->addTitle($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAllergene(Allergene $allergene): self
-    {
-        if ($this->allergene->removeElement($allergene)) {
-            $allergene->removeTitle($this);
-        }
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Regime>

@@ -11,9 +11,13 @@ class MentionsLegalesController extends AbstractController
     #[Route('/mentions-legales', name: 'app_mentions_legales')]
     public function index(): Response
     {
+        $utilisateur = $this->getUser();
+
         return $this->render('politiquesmentions/mentions.html.twig', [
             'controller_name' => 'MentionsLegalesController',
-            'title' => 'Mention légales Mangez-Sain!'
+            'title' => 'Mention légales Mangez-Sain!',
+            'utilisateur' => $utilisateur,
+
         ]);
     }
 }

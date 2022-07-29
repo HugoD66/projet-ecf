@@ -10,17 +10,16 @@
 <div class="register">
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
+    {{ form_row(registrationForm.agreeTerms) }}
+
+    {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
         {{ form_row(registrationForm.username) }}
     {{ form_row(registrationForm.regime) }}
-    {{ form_row(registrationForm.allergenes) }}
-    {{ form_row(registrationForm.agreeTerms) }}
 
 
-    <button class="button-33" type="submit" class="btn">S'enregistrer</button>
     {{ form_end(registrationForm) }}
 
     <h2>S'inscrire</h2>

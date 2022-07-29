@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[UniqueEntity(fields: ['email'], message: 'Vous avez dejas un compte avec cet email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -40,13 +40,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     private ?Regime $regime = null;
 
-    #[ORM\OneToMany(mappedBy: 'userAllergene', targetEntity: Allergene::class)]
-    private Collection $allergenes;
 
-    public function __construct()
-    {
-        $this->allergenes = new ArrayCollection();
-    }
 
 
 
@@ -159,35 +153,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @return Collection<int, Allergene>
-     */
-    public function getAllergenes(): Collection
-    {
-        return $this->allergenes;
-    }
 
-    public function addAllergene(Allergene $allergene): self
-    {
-        if (!$this->allergenes->contains($allergene)) {
-            $this->allergenes[] = $allergene;
-            $allergene->setUserAllergene($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAllergene(Allergene $allergene): self
-    {
-        if ($this->allergenes->removeElement($allergene)) {
-            // set the owning side to null (unless already changed)
-            if ($allergene->getUserAllergene() === $this) {
-                $allergene->setUserAllergene(null);
-            }
-        }
-
-        return $this;
-    }
     public function __toString()
     {
         return $this->email;

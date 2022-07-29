@@ -14,14 +14,18 @@ class ProfilController extends AbstractController
     #[Route('/user/{id}', name: 'app_profil')]
     public function index(ManagerRegistry $doctrine,int $id): Response
     {
+        $utilisateur = $this->getUser();
+
         $user = $doctrine->getRepository(User::class)->find($id);
         $contact = $doctrine->getRepository(ContactUs::class)->getContactUsList();
 
         return $this->render('profil/profil.html.twig', [
             'title' => 'Mangez-Sain! Profil',
             'user' => $user,
-            'contact' => $contact
-            ]);
+            'contact' => $contact,
+            'utilisateur' => $utilisateur,
+
+        ]);
     }
 
     #[Route('/user/contact-us/{id}', name: 'delete_form')]

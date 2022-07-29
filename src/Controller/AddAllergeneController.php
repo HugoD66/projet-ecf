@@ -18,7 +18,7 @@ class AddAllergeneController extends AbstractController
         $allergenes = $doctrine->getRepository(Allergene::class)->findAll();
 
         $allergene = new Allergene();
-        $allergene->addTitle()->setTitle('test');
+        $allergene->setTitle('test');
         $allergene->setDescription('test');
 
         $entityManager->persist($allergene);

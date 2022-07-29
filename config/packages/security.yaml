@@ -27,7 +27,7 @@ security:
     role_hierarchy:
         ROLE_PATIENT:     ROLE_USER
         ROLE_ADMIN:       ROLE_PATIENT
-        ROLE_SUPER_ADMIn: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
         # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
