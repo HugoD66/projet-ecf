@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AddAllergeneController!{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block body %}
 
@@ -11,5 +11,8 @@
 
         {% endfor %}
     </ul>
+
+    {{ form(form) }}
+
 
 {% endblock %}

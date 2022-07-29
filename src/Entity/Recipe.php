@@ -58,9 +58,13 @@ class Recipe
     )]
     private ?string $picture = null;
 
+    #[ORM\OneToMany(mappedBy: 'recip_allergene', targetEntity: Allergene::class)]
+    private Collection $allergeneList;
+
     public function __construct()
     {
         $this->regime = new ArrayCollection();
+        $this->allergeneList = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -204,5 +208,35 @@ class Recipe
     public function __toString()
     {
         return $this->title;
+    }
+
+    /**
+     * @return Collection<int, Allergene>
+     */
+    public function getAllergeneList(): Collection
+    {
+        return $this->allergeneList;
+    }
+
+    public function addAllergeneList(Allergene $allergeneList): self
+    {
+        if (!$this->allergeneList->contains($allergeneList)) {
+            $this->allergeneList[] = $allergeneList;
+            $allergeneList->setRecipAllergene($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAllergeneList(Allergene $allergeneList): self
+    {
+        if ($this->allergeneList->removeElement($allergeneList)) {
+            // set the owning side to null (unless already changed)
+            if ($allergeneList->getRecipAllergene() === $this) {
+                $allergeneList->setRecipAllergene(null);
+            }
+        }
+
+        return $this;
     }
 }
