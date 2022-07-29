@@ -1,0 +1,21 @@
+id
+
+            {%  if is_granted('ROLE_ADMIN') %}
+                <button type="button" class="btn" id="footer-btn"><a href="{{ path('app_profil') }}">Votre compte</a></button>
+            {% elseif is_granted('ROLE_PATIENT') %}
+                <button type="button" class="btn" id="footer-btn"><a href="{{ path('app_profil') }}">Votre compte</a></button>
+            {% elseif is_granted('ROLE_USER') %}
+                <button type="button" class="btn" id="footer-btn"><a href="{{ path('app_profil') }}">Votre compte</a></button>
+            {% endif %}
+
+<!--
+            <button type="button" class="btn"><a href="{{ path('app_register') }}">Enregistrement</a></button>
+
+            <button type="button" class="btn"  id="btn-up-circle"> Nos formules</button>
+
+            <button type="button" class="btn"> <a href="{{ path('app_profil') }}">Votre compte </a></button>
+-->
+
+
+        $user = $doctrine->getRepository(User::class)->find($id);
+            'user' => $user
