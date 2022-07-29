@@ -84,4 +84,10 @@ class Allergene
         return $this;
     }
 
+    public function setTitle(string $string)
+    {
+        return $this->title;
+
+    }
+
 }

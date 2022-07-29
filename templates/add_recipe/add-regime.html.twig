@@ -4,4 +4,13 @@
 
 {% block body %}
 
+
+        <ul>
+                {% for regimeList in regimeLists %}
+                        <li>{{ regimeList.title }}</li>
+                        <li>{{ regimeList.description }}</li>
+
+                {% endfor %}
+        </ul>
+
 {% endblock %}

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Allergene;
 use App\Entity\Recipe;
+use App\Entity\Regime;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,23 +19,13 @@ class AddRegimeController extends AbstractController
 
 
 
-        $allergene = new Allergene();
-        $allergene->addTitle('test');
+        $regimeList = $doctrine->getRepository(Regime::class)->findAll();
 
-
-
-
-
-
-        $entityManager = $doctrine->getManager();
-        $entityManager->persist($allergene);
-        $entityManager->flush();
-
-
-        return $this->render('add-regime.html.twig', [
+        return $this->render('add_recipe/add-regime.html.twig', [
             'title' => 'Mangez-Sain! Ajout régime',
             'controller_name' => 'AddRegimeController',
-            'data_class' => Allergene::class,
+            'data_class' => Regime::class,
+            'regimeLists' => $regimeList,
 
         ]);
     }

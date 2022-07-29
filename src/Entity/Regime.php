@@ -52,4 +52,5 @@ class Regime
     {
         return $this->title;
     }
+
 }

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AddAllergeneController!{% endblock %}
+
+{% block body %}
+
+    <ul>
+        {% for allergeneList in allergeneLists %}
+            <li>{{ allergeneList.title }}</li>
+            <li>{{ allergeneList.description }}</li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}
