@@ -40,6 +40,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     private ?Regime $regime = null;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Allergene::class)]
+    private Collection $allergene;
+
+    public function __construct()
+    {
+        $this->allergene = new ArrayCollection();
+    }
+
 
 
 
@@ -157,5 +165,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __toString()
     {
         return $this->email;
+    }
+
+    /**
+     * @return Collection<int, Allergene>
+     */
+    public function getAllergene(): Collection
+    {
+        return $this->allergene;
+    }
+
+    public function addAllergene(Allergene $allergene): self
+    {
+        if (!$this->allergene->contains($allergene)) {
+            $this->allergene[] = $allergene;
+            $allergene->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAllergene(Allergene $allergene): self
+    {
+        if ($this->allergene->removeElement($allergene)) {
+            // set the owning side to null (unless already changed)
+            if ($allergene->getUser() === $this) {
+                $allergene->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }

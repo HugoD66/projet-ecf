@@ -25,6 +25,9 @@ class Allergene
     #[ORM\ManyToOne(inversedBy: 'allergeneList')]
     private ?Recipe $recip_allergene = null;
 
+    #[ORM\ManyToOne(inversedBy: 'allergene')]
+    private ?User $user = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -66,6 +69,18 @@ class Allergene
     public function setRecipAllergene(?Recipe $recip_allergene): self
     {
         $this->recip_allergene = $recip_allergene;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

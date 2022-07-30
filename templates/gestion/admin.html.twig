@@ -3,33 +3,24 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block body %}
-User :
+
+    <h3>Creer nouveau patient :    </h3>
+    <button type="button" class="btn"><a href="{{ path('create-patient', {'id': utilisateur.id}) }}">creation patient</a></button>
+
 <li>Nom : {{ user.email }}</li>
 
-
-<br>    <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-{% for u in contact %}
-    <tbody>
-    <tr>
-        <td>{{ u.username }}</td>
-        <td>{{ u.email }}</td>
-        <td>{{ u.list }}</td>
-        <td>{{ u.description }}</td>
-        <td><button class="btn " type="button">
-                <a href="{{ path('delete_form', {'id': u.id}) }}" onclick="return confirm('Etes vous sûre de supprimer ce formulaire?  ')">Supprimer</a>
-            </button>
-        </td>
-    </tr>
-    </tbody>
-{% endfor %}ock %}
+    {% for u in contact %}
+        <tbody>
+        <tr>
+            <td>{{ u.username }}</td>
+            <td>{{ u.email }}</td>
+            <td>{{ u.list }}</td>
+            <td>{{ u.description }}</td>
+            <td><button class="btn " type="button">
+                    <a href="{{ path('delete_form', {'id': u.id}) }}" onclick="return confirm('Etes vous sûre de supprimer ce formulaire?  ')">Supprimer</a>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    {% endfor %}
+{% endblock %}

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Allergene;
 use App\Entity\Recipe;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,12 +17,13 @@ class RecipeController extends AbstractController
         $recipe = $doctrine->getRepository(Recipe::class)->find($id);
 
         $utilisateur = $this->getUser();
-
+        $allergene = $doctrine->getRepository(Allergene::class)->find($id);
 
         return $this->render('recipe/recipe-id.html.twig', [
             'title' => 'Mangez-Sain ! Recette',
              'id' => $recipe,
             'utilisateur' => $utilisateur,
+            'allergene' => $allergene,
 
         ]);
     }

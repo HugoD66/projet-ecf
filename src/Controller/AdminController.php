@@ -4,9 +4,14 @@ namespace App\Controller;
 
 use App\Entity\ContactUs;
 use App\Entity\User;
+use App\Form\CreatePatientType;
+use App\Form\RegistrationFormType;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminController extends AbstractController
@@ -19,7 +24,7 @@ class AdminController extends AbstractController
         $user = $doctrine->getRepository(User::class)->find($id);
         $contact = $doctrine->getRepository(ContactUs::class)->getContactUsList();
 
-        return $this->render('profil/profil.html.twig', [
+        return $this->render('gestion/admin.html.twig', [
             'title' => 'Mangez-Sain! Profil',
             'utilisateur' => $utilisateur,
             'user' => $user,
@@ -38,4 +43,6 @@ class AdminController extends AbstractController
 
         return $this->redirectToRoute('app_admin');
     }
+
+
 }

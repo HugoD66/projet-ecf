@@ -14,9 +14,8 @@ class PatientController extends AbstractController
         $utilisateur = $this->getUser();
 
         return $this->render('gestion/patient.html.twig', [
-            'controller_name' => 'PatientController',
             'utilisateur' => $utilisateur,
-
+            'title' => 'Mangez-sain! Profil Patient',
         ]);
     }
 }
