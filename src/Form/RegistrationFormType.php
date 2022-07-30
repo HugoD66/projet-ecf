@@ -32,29 +32,31 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('username')
             ->add('regime', EntityType::class, array(
-                'class' => Regime::class
-            ))
-            ->add('allergenes', EntityType::class, array(
-                'class' => Allergene::class,
+                'class' => Regime::class,
+                'expanded' => true,
+                'multiple' => true,
+                'required' => false,
+                'empty_data'=>true,
                 'mapped' => false,
-
-
             ))
-
-
-
+            ->add('allergenes', EntityType::class,
+                array(
+                    'expanded' => true,
+                    'multiple' => true,
+                    'empty_data'=>true,
+                    'class' => Allergene::class,
+                    'mapped' => false,
+                ))
             ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez entrer un mot de passe',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'Votre mot de passe doit contenir au moins  {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),

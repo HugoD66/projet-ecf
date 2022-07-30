@@ -17,8 +17,10 @@
             label: 'Password'
         }) }}
         {{ form_row(registrationForm.username) }}
+    <div class="registerFlex">
     {{ form_row(registrationForm.regime) }}
-
+    {{ form_row(registrationForm.allergenes) }}
+    </div>
 
     {{ form_end(registrationForm) }}
 

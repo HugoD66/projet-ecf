@@ -29,7 +29,7 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
 
-        $users = $this->getUser();
+        $utilisateur = $this->getUser();
 
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -62,7 +62,7 @@ class RegistrationController extends AbstractController
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
             'title' => 'Manger-Sain! Enregistrement',
-            'users' => $users,
+            'utilisateur' => $utilisateur,
 
         ]);
     }

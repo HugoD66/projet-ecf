@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Allergene;
 use App\Entity\Hotel;
 use App\Entity\Recipe;
 use App\Entity\Regime;
@@ -33,7 +34,11 @@ class CreateRecipeType extends AbstractType
                 'mapped' => false,
 
             ])
-            ->add('allergene')
+            ->add('allergene', EntityType::class, [
+                'class' => Allergene::class,
+                'mapped' => false,
+
+            ])
             ->add('save', SubmitType::class);
 
         ;

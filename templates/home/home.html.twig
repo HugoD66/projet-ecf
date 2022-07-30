@@ -95,11 +95,25 @@
 
 
 
-        <div class="recettes">
+        <div class="recette">
             <h2>Mes recettes</h2>
             <button type="button" class="button.33"><a href="{{ path('app_recipe', {'id': '1'}) }}">Accés recette</a></button>
             <button type="button" class="button.33"><a href="{{ path('app_recipe', {'id': '2'}) }}">Accés recette</a></button>
             <button type="button" class="button.33"><a href="{{ path('app_recipe', {'id': '3'}) }}">Accés recette</a></button>
+            <h3>Liste de toutes mes recettes</h3>
+            <ul>
+                {% for recipe in recipes %}
+                    <div class="accesRecette">
+                   <h4>• {{ recipe.title }}</h4>
+                   <p>{{ recipe.description }}</p>
+                    {% if recipe.getPicture() %}
+                        <img class="imageRecette" alt="Photographie de la recette" src="{{ asset('pictures/recipe-picture/' ~ recipe.getPicture()) }} ">
+                    {% endif %}
+                    </div>
+                {% endfor %}
+            </ul>
+
         </div>
+
     </section>
 {% endblock %}

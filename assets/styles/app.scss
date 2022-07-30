@@ -176,6 +176,7 @@ section {
       text-align: center;
     }
   }
+
 }
 .profilSandrine {
   background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
@@ -252,7 +253,7 @@ section {
     color: $color3;
   }
 }
-.connexion, .redirectRegister, .register, .dejaInscrit, .contact-us {
+.connexion, .redirectRegister, .register, .dejaInscrit, .contact-us, .formulaire-recipe {
   background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
   display: flex;
   height: 77vh;
@@ -306,6 +307,11 @@ section {
       transform: scale(1.05) rotate(-1deg);
     }
   }
+  .registerFlex {
+    display: flex;
+    
+  }
+
 }
 .redirectRegister {
   flex-direction: row;
@@ -372,4 +378,35 @@ h2 {
     font-family: $textFamily;
     color: $textColor;
   }
+}
+
+.formulaire-recipe {
+  height: 120vh;
+}
+
+.recettes {
+  background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
+  margin: auto;
+
+  .accesRecette {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    h4 {
+      text-decoration: black underline solid;
+    }
+    p {
+      text-align: center;
+    }
+  }
+  .imageRecette {
+    max-height: 250px;
+    max-width: 250px;
+  }
+}
+
+
+.recipeId {
+
 }

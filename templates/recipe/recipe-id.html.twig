@@ -3,21 +3,26 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block body %}
-    <h2>{{ id }}</h2>
+    <div class="recipeId">
+        <h2>{{ id }}</h2>
 
-    <ul>
-        <li>Nom : {{ id.title }}</li>
-        <li>Nom : {{ id.description }}</li>
-        <li>Adresse : {{ id.cookingTime }}</li>
-        <li>Gérant : {{ id.cookingRest }}</li>
-        <li>Gérant : {{ id.heatTime }}</li>
-        <li>Gérant : {{ id.ingredients }}</li>
-        <li>Gérant : {{ id.steps }}</li>
-      <!-- regime et allergenes -->
-        <li>picture : {{ id.picture }}</li>
-        <img src="{{ id.picture }}" alt="Photographie de la recette">
+        <div class="image" id="imageRecipe">
+            {% if id.getPicture() %}<img alt="Photographie de la recette" src="{{ asset('pictures/recipe-picture/' ~ id.getPicture()) }} ">{% endif %}
+        </div>
+
+        <ul>
+            <li>Nom : {{ id.title }}</li>
+            <li>Nom : {{ id.description }}</li>
+            <li>Adresse : {{ id.cookingTime }}</li>
+            <li>Gérant : {{ id.cookingRest }}</li>
+            <li>Gérant : {{ id.heatTime }}</li>
+            <li>Gérant : {{ id.ingredients }}</li>
+            <li>Gérant : {{ id.steps }}</li>
+            <!-- regime et allergenes -->
+
+        </ul>
 
 
-    </ul>
+    </div>
 
 {% endblock %}

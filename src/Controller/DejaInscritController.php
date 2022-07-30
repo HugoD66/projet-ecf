@@ -11,9 +11,15 @@ class DejaInscritController extends AbstractController
     #[Route('/deja-inscrit', name: 'app_deja_inscrit')]
     public function index(): Response
     {
+
+
+        $utilisateur = $this->getUser();
+
+
         return $this->render('registration/dejainscrit.html.twig', [
             'controller_name' => 'DejaInscritController',
-            'title' => 'Mangez-Sain! Déjas Inscrit'
+            'title' => 'Mangez-Sain! Déjas Inscrit',
+            'utilisateur' => $utilisateur,
             ]);
     }
 }
