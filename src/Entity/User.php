@@ -43,6 +43,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Allergene::class)]
     private Collection $allergene;
 
+    #[ORM\OneToOne(mappedBy: 'username', cascade: ['persist', 'remove'])]
+    private ?Commentaire $commentaire = null;
+
     public function __construct()
     {
         $this->allergene = new ArrayCollection();
@@ -193,6 +196,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $allergene->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCommentaire(): ?Commentaire
+    {
+        return $this->commentaire;
+    }
+
+    public function setCommentaire(Commentaire $commentaire): self
+    {
+        // set the owning side of the relation if necessary
+        if ($commentaire->getUsername() !== $this) {
+            $commentaire->setUsername($this);
+        }
+
+        $this->commentaire = $commentaire;
 
         return $this;
     }

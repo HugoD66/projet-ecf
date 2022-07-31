@@ -5,18 +5,27 @@
 {% block body %}
     <div class="recettes">
         <h2>Toutes mes recettes</h2>
-
         <ul>
             {% for recipe in recipes %}
                 <div class="accesRecette">
-                    <h4>•<a href="{{ path('app_recipe', {'id': '1'}) }}"> {{ recipe.title }} </a></h4>
-                    <p>{{ recipe.description }}</p>
-                    {% if recipe.getPicture() %}
-                        <img class="imageRecette" alt="Photographie de la recette" src="{{ asset('pictures/recipe-picture/' ~ recipe.getPicture()) }} ">
+                    {% if recipe.isAccessibleUser == true %}
+
+                        <h4>•<a href="{{ path('app_recipe', {'id': '1'}) }}"> {{ recipe.title }} </a></h4>
+                        <p>{{ recipe.description }}</p>
+                        {% if recipe.getPicture() %}
+                            <img class="imageRecette" alt="Photographie de la recette" src="{{ asset('pictures/recipe-picture/' ~ recipe.getPicture()) }} ">
+                        {% endif %}
+                    {% else %}
                     {% endif %}
                 </div>
             {% endfor %}
         </ul>
 
+        {% endif %}
+        {%  if is_granted('ROLE_ADMIN') %}
+            <button type="button" style="margin-left: 20%;" class="button-33"><a href="{{ path('app_add_recipe') }}">Créer un nouveau plat</a></button>
+        {% else %}
+        {% endif %}
+        <br>
     </div>
 {% endblock %}

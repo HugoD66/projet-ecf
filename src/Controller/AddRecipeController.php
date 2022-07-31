@@ -22,7 +22,7 @@ class AddRecipeController extends AbstractController
     public function new(ManagerRegistry $doctrine, EntityManagerInterface $entityManager, Request $request, SluggerInterface $slugger): Response
     {
 
-        $user = $this->getUser();
+        $utilisateur = $this->getUser();
         $recipes = $doctrine->getRepository(Recipe::class)->getRecipe();
 
 
@@ -56,9 +56,10 @@ class AddRecipeController extends AbstractController
         return $this->renderForm('add_recipe/add-recipe.html.twig', [
             'form' => $form,
             'recipe' => $recipe,
-            'user' => $user,
+            'utilisateur' => $utilisateur,
             'recipes' => $recipes,
             'title' => 'Mangez-sain! Ajout d\'une recette'
+
         ]);
     }
 }

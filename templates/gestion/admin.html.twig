@@ -26,7 +26,9 @@
         <h3>Allérgénes/Régimes :</h3>
         <div class="patientGestionAdmin3">
         <button class="button-33" type="button"><a href="{{ path('app_add_allergene') }}">Ajouter des allérgénes</a></button>
-        <button class="button-33" type="button"><a href="{{ path('app_add_regime') }}">Ajouter des régimes</a></button>
+            <button class="button-33" type="button"><a href="{{ path('app_add_recipe') }}">Ajouter des Plats</a></button>
+
+            <button class="button-33" type="button"><a href="{{ path('app_add_regime') }}">Ajouter des régimes</a></button>
         </div>
         <h3>Vos réclamations: </h3>
         {% for u in contact %}

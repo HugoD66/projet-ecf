@@ -26,6 +26,7 @@ class CreatePatientController extends AbstractController
         $form = $this->createForm(CreatePatientType::class, $user);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
             $user->setPassword(
@@ -34,6 +35,8 @@ class CreatePatientController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+            $user->setRoles(array('ROLE_PATIENT'));
+
 
             $entityManager->persist($user);
             $entityManager->flush();

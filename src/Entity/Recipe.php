@@ -61,6 +61,12 @@ class Recipe
     #[ORM\OneToMany(mappedBy: 'recip_allergene', targetEntity: Allergene::class)]
     private Collection $allergeneList;
 
+    #[ORM\Column]
+    private ?bool $isAccessibleUser = null;
+
+    #[ORM\ManyToOne(inversedBy: 'recipe_commentaire')]
+    private ?Commentaire $commentaire = null;
+
     public function __construct()
     {
         $this->regime = new ArrayCollection();
@@ -236,6 +242,30 @@ class Recipe
                 $allergeneList->setRecipAllergene(null);
             }
         }
+
+        return $this;
+    }
+
+    public function isIsAccessibleUser(): ?bool
+    {
+        return $this->isAccessibleUser;
+    }
+
+    public function setIsAccessibleUser(bool $isAccessibleUser): self
+    {
+        $this->isAccessibleUser = $isAccessibleUser;
+
+        return $this;
+    }
+
+    public function getCommentaire(): ?Commentaire
+    {
+        return $this->commentaire;
+    }
+
+    public function setCommentaire(?Commentaire $commentaire): self
+    {
+        $this->commentaire = $commentaire;
 
         return $this;
     }

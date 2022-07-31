@@ -77,4 +77,13 @@ class RecipeRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+    //
+    //public function getRecipeAccessibleByPatient()
+    //{
+    //    return $this->createQueryBuilder('y')
+    //        ->select('y.title, y.description, y.getPicture')
+    //        ->andWhere('y.isAccessibleUser = true')
+    //        ->getQuery()
+    //        ->getResult();
+    //}
 }

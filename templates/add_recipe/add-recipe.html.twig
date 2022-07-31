@@ -9,14 +9,7 @@
 
 
     <div class="formulaire-recipe">
-        {{ user }}
-
-        <ul>
-            {% for recipe in recipes %}
-                <li>{{ recipe.cookingTime }}</li>
-            {% endfor %}
-        </ul>
-
+        <h2>Ajouter une recette</h2>
 
         {{ form(form) }}
     </div>

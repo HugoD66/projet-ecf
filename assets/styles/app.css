@@ -11143,7 +11143,7 @@ header .navbar {
 }
 header .navbar button {
   text-decoration: none;
-  background-image: linear-gradient(to right, #DDBEA9 0%, #4B6334 51%, #427A32 100%);
+  background-image: linear-gradient(to right, #DDBEA9 0%, rgba(74, 104, 39, 0.78) 51%, #427A32 100%);
   margin: 10px;
   padding: 15px 45px;
   text-align: center;
@@ -11369,7 +11369,7 @@ section .recette h3, section .recette .h3 {
 }
 .footer a {
   text-decoration: none;
-  color: #CB997E;
+  color: #7a3c3c;
 }
 
 .connexion, .redirectRegister, .register, .dejaInscrit, .contact-us, .formulaire-recipe {
@@ -11506,14 +11506,28 @@ h2, .h2 {
 }
 
 .formulaire-recipe {
-  height: 120vh;
+  height: 140vh;
 }
 
 .recettes {
   background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
   margin: auto;
 }
+.recettes .inscrirePourIntegralitee {
+  margin-right: 60px;
+  margin-left: 15%;
+  font-size: 22px;
+  font-family: FreeMono, monospace;
+  text-decoration: 1px underline solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recettes h2, .recettes .h2 {
+  margin-top: 0;
+}
 .recettes .accesRecette {
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11586,6 +11600,36 @@ h2, .h2 {
 .allergeneRegime h3, .allergeneRegime .h3 {
   margin-top: 60px;
   margin-bottom: 50px;
+}
+
+.checkboxTest {
+  height: 24px;
+  width: 24px;
+  border: 8px #7a3c3c;
+  display: block;
+  background: #FFE8D6;
+}
+
+.card {
+  margin-bottom: 5%;
+  width: 45%;
+  background-color: rgba(126, 143, 105, 0.36);
+  box-shadow: 5px 5px 17px 5px #000000;
+}
+.card .card-body {
+  margin: 15px;
+  font-family: Franklin Gothic, sans-serif;
+}
+.card .card-body .card-title {
+  font-family: rgba(81, 51, 43, 0.94);
+  text-decoration: none;
+  color: #40462d;
+  font-size: 24px;
+}
+.card .card-body li {
+  font-family: Consolas, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=app.css.map */
