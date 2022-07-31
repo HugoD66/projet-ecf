@@ -19,3 +19,11 @@ id
 
         $user = $doctrine->getRepository(User::class)->find($id);
             'user' => $user
+
+
+
+PAGE ADMIN
+                {% for getPatientList in getPatientLists %}
+
+                {{ getPatientLists }}
+                {% endfor %}

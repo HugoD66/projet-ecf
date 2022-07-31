@@ -7,11 +7,10 @@
 <div class="register">
 
     {{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.agreeTerms) }}
 
     {{ form_row(registrationForm.email) }}
     {{ form_row(registrationForm.plainPassword, {
-        label: 'Password'
+        label: 'Mot de passe :'
     }) }}
     {{ form_row(registrationForm.username) }}
     <div class="registerFlex">
@@ -20,6 +19,7 @@
     </div>
 
     {{ form_end(registrationForm) }}
+
 </div>
 
 {% endblock %}

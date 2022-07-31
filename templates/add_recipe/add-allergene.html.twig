@@ -3,16 +3,20 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block body %}
-
-    <ul>
-        {% for allergeneList in allergeneLists %}
-            <li>{{ allergeneList.title }}</li>
-            <li>{{ allergeneList.description }}</li>
-
-        {% endfor %}
-    </ul>
-
-    {{ form(form) }}
-
-
+    <div class="allergeneRegime">
+        <h2>Tous les Allergènes: </h2>
+        <div class="allergeneList">
+            <ul>
+                {% for allergeneList in allergeneLists %}
+                    <li><h4>{{ allergeneList.title }}</h4></li>
+                    <p>{{ allergeneList.description }}</p>
+                {% endfor %}
+            </ul>
+        </div>
+        {%  if is_granted('ROLE_ADMIN') %}
+            <h3>Ajouter un Allergène :</h3>
+            {{ form(form) }}
+        {% else %}
+        {% endif %}<br><br><br>
+    </div>
 {% endblock %}

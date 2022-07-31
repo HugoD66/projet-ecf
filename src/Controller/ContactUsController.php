@@ -15,6 +15,8 @@ class ContactUsController extends AbstractController
     #[Route('/contact-us', name: 'app_contact_us')]
     public function index(Request $request,  EntityManagerInterface $entityManager): Response
     {
+        $utilisateur = $this->getUser();
+
         $contactus = new ContactUs();
 
         $form = $this->createForm(ContactUsType::class, $contactus);
@@ -34,7 +36,7 @@ class ContactUsController extends AbstractController
         return $this->render('registration/contact-us.html.twig', [
             'title' => 'Mangez-Sain! Nous contacter',
             'form' => $form->createView(),
-
+            'utilisateur' => $utilisateur,
         ]);
     }
 }

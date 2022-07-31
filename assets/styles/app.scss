@@ -126,6 +126,7 @@ section {
       margin-left: 5%;
       color: $h3color;
       font-family:  $titleFamily;
+
     }
     ul {
       list-style-image: url('../../public/pictures/icone-boot/arrow-right.svg');
@@ -163,7 +164,6 @@ section {
       .buttons {
         display: flex;
         justify-content: center;
-
         .button-33 {
           height: 120px;
         }
@@ -176,7 +176,15 @@ section {
       text-align: center;
     }
   }
-
+  .recette {
+    h3 {
+      font-size: 50px;
+      text-decoration: underline solid $titleColor;
+      text-shadow: 2px 4px 3px rgba(81, 51, 43, 0.94);
+      text-align: center;
+      font-family: $titleFamily;
+    }
+  }
 }
 .profilSandrine {
   background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
@@ -309,9 +317,10 @@ section {
   }
   .registerFlex {
     display: flex;
-    
   }
-
+}
+.register {
+  font-family: $police1;
 }
 .redirectRegister {
   flex-direction: row;
@@ -405,8 +414,63 @@ h2 {
     max-width: 250px;
   }
 }
+.gestion-admin {
+  background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
+  margin: 0px auto auto;
+  h2 {
+    margin-top: 0;
+  }
 
-
-.recipeId {
-
+  .patientGestionAdmin1, .patientGestionAdmin2, .patientGestionAdmin3 {
+    font-family: $textFamily;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  table
+  {
+    width: 95%;
+    margin-top: 50px;
+    border-collapse: collapse;
+  }
+  td, th /* Mettre une bordure sur les td ET les th */
+  {
+    border: 1px solid black;
+  }
 }
+.allergeneRegime {
+  background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
+  .allergeneRegimeList {
+    width: 80%;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  h3 {
+    font-size: 50px;
+    text-decoration: underline solid $titleColor;
+    text-shadow: 2px 4px 3px rgba(81, 51, 43, 0.94);
+    text-align: center;
+    font-family: $titleFamily;
+  }
+  h4 {
+    text-decoration: underline 1px solid black;
+    font-family: $police1;
+    font-size: 20px;
+  }
+  p {
+    font-family: $textFamily;
+    font-size: 18px;
+  }
+  form {
+    width: 80%;
+  }
+  h3 {
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+}
+

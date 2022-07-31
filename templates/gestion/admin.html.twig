@@ -4,23 +4,46 @@
 
 {% block body %}
 
-    <h3>Creer nouveau patient :    </h3>
-    <button type="button" class="btn"><a href="{{ path('create-patient', {'id': utilisateur.id}) }}">creation patient</a></button>
 
-<li>Nom : {{ user.email }}</li>
 
-    {% for u in contact %}
-        <tbody>
-        <tr>
-            <td>{{ u.username }}</td>
-            <td>{{ u.email }}</td>
-            <td>{{ u.list }}</td>
-            <td>{{ u.description }}</td>
-            <td><button class="btn " type="button">
-                    <a href="{{ path('delete_form', {'id': u.id}) }}" onclick="return confirm('Etes vous sûre de supprimer ce formulaire?  ')">Supprimer</a>
-                </button>
-            </td>
-        </tr>
-        </tbody>
-    {% endfor %}
+    <div class="gestion-admin">
+    <h2>Page de gestion Administrateur</h2>
+        <h3>Vos identifiants: </h3>
+        <div class="patientGestionAdmin1">
+                <ul>
+                    <li>Nom : {{ user.email }}</li>
+                    <li>Nom d'utilisateur : {{ user.username }}</li>
+                </ul>
+        </div>
+        <h3>Vos patients: </h3>
+        <div class="patientGestionAdmin2">
+            <p>Nombre de patients inscrits: {{ countpatients }}</p>
+            <button type="button" class="button-33">
+                <a href="{{ path('create-patient', {'id': utilisateur.id}) }}">Creation Patient</a>
+            </button>
+            <p>Nombre d'utilisateur inscrits: {{ countUser }}</p>
+        </div>
+        <h3>Allérgénes/Régimes :</h3>
+        <div class="patientGestionAdmin3">
+        <button class="button-33" type="button"><a href="{{ path('app_add_allergene') }}">Ajouter des allérgénes</a></button>
+        <button class="button-33" type="button"><a href="{{ path('app_add_regime') }}">Ajouter des régimes</a></button>
+        </div>
+        <h3>Vos réclamations: </h3>
+        {% for u in contact %}
+            <table>
+                <tr>
+                    <td>{{ u.email }}</td>
+                    <td>{{ u.email }}</td>
+                    <td>{{ u.description }}</td>
+                </tr>
+
+                <tr>
+                    <td><button class="btn " type="button">
+                            <a href="{{ path('delete_form', {'id': u.id}) }}" onclick="return confirm('Etes vous sûre de supprimer ce formulaire?  ')">Supprimer</a>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        {% endfor %}
+    </div>
 {% endblock %}

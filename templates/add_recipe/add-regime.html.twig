@@ -3,15 +3,20 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block body %}
-
-
+<div class="allergeneRegime">
+    <h2>Tous les Régimes: </h2>
+    <div class="allergeneRegimeList">
         <ul>
-                {% for regimeList in regimeLists %}
-                        <li>{{ regimeList.title }}</li>
-                        <li>{{ regimeList.description }}</li>
-
-                {% endfor %}
+            {% for regimeList in regimeLists %}
+                <li><h4>{{ regimeList.title }}</h4></li>
+                <p>{{ regimeList.description }}</p>
+            {% endfor %}
         </ul>
-    {{ form(form) }}
-
+    </div>
+    {%  if is_granted('ROLE_ADMIN') %}
+        <h3>Ajouter un Régime :</h3>
+        {{ form(form) }}
+        {% else %}
+        {% endif %}<br><br><br>
+    </div>
 {% endblock %}

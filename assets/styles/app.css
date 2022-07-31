@@ -11237,7 +11237,7 @@ section .presentation p {
   font-weight: 600;
   font-size: large;
   text-align: end;
-  color: rgba(70, 47, 40, 0.94);
+  color: rgba(81, 51, 43, 0.94);
 }
 section .apropos h3, section .apropos .h3 {
   margin-left: 5%;
@@ -11286,6 +11286,13 @@ section .mentionPolitiqueContact p {
   font-family: Franklin Gothic, sans-serif;
   color: rgba(56, 56, 56, 0.94);
   text-align: center;
+}
+section .recette h3, section .recette .h3 {
+  font-size: 50px;
+  text-decoration: underline solid rgba(81, 51, 43, 0.94);
+  text-shadow: 2px 4px 3px rgba(81, 51, 43, 0.94);
+  text-align: center;
+  font-family: Courier New, serif;
 }
 
 .profilSandrine {
@@ -11424,6 +11431,10 @@ section .mentionPolitiqueContact p {
   display: flex;
 }
 
+.register {
+  font-family: Consolas, sans-serif;
+}
+
 .redirectRegister {
   flex-direction: row;
   font-size: 18px;
@@ -11434,7 +11445,7 @@ section .mentionPolitiqueContact p {
 
 h2, .h2 {
   margin: 80px;
-  color: rgba(70, 47, 40, 0.94);
+  color: rgba(81, 51, 43, 0.94);
   text-align: center;
   font-size: 80px;
   border-bottom: solid;
@@ -11517,6 +11528,64 @@ h2, .h2 {
 .recettes .imageRecette {
   max-height: 250px;
   max-width: 250px;
+}
+
+.gestion-admin {
+  background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
+  margin: 0px auto auto;
+}
+.gestion-admin h2, .gestion-admin .h2 {
+  margin-top: 0;
+}
+.gestion-admin .patientGestionAdmin1, .gestion-admin .patientGestionAdmin2, .gestion-admin .patientGestionAdmin3 {
+  font-family: Franklin Gothic, sans-serif;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.gestion-admin table {
+  width: 95%;
+  margin-top: 50px;
+  border-collapse: collapse;
+}
+.gestion-admin td, .gestion-admin th {
+  border: 1px solid black;
+}
+
+.allergeneRegime {
+  background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
+}
+.allergeneRegime .allergeneRegimeList {
+  width: 80%;
+}
+.allergeneRegime h2, .allergeneRegime .h2 {
+  margin-top: 0;
+}
+.allergeneRegime h3, .allergeneRegime .h3 {
+  font-size: 50px;
+  text-decoration: underline solid rgba(81, 51, 43, 0.94);
+  text-shadow: 2px 4px 3px rgba(81, 51, 43, 0.94);
+  text-align: center;
+  font-family: Courier New, serif;
+}
+.allergeneRegime h4, .allergeneRegime .h4 {
+  text-decoration: underline 1px solid black;
+  font-family: Consolas, sans-serif;
+  font-size: 20px;
+}
+.allergeneRegime p {
+  font-family: Franklin Gothic, sans-serif;
+  font-size: 18px;
+}
+.allergeneRegime form {
+  width: 80%;
+}
+.allergeneRegime h3, .allergeneRegime .h3 {
+  margin-top: 60px;
+  margin-bottom: 50px;
 }
 
 /*# sourceMappingURL=app.css.map */

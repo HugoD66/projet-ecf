@@ -97,10 +97,18 @@
 
         <div class="recette">
             <h2>Mes recettes</h2>
+            <button type="button" class="button.33"><a href="{{ path('app_recipe', {'id': '4'}) }}">Accés recette</a></button>
+            <button type="button" class="button.33"><a href="{{ path('app_recipe', {'id': '6'}) }}">Accés recette</a></button>
             <button type="button" class="button.33"><a href="{{ path('app_recipe', {'id': '1'}) }}">Accés recette</a></button>
-            <button type="button" class="button.33"><a href="{{ path('app_recipe', {'id': '2'}) }}">Accés recette</a></button>
-            <button type="button" class="button.33"><a href="{{ path('app_recipe', {'id': '3'}) }}">Accés recette</a></button>
             <h3>Liste de toutes mes recettes</h3>
+            <button class="button-33" type="button"><a href="{{ path('app_all_recipe') }}">Toutes mes recettes</a></button>
+            <button class="button-33" type="button"><a href="{{ path('app_add_regime') }}">Tous les régimes</a></button>
+            <button class="button-33" type="button"><a href="{{ path('app_add_allergene') }}">Tous les allérgenes</a></button>
+
+
+        <div class="meuilleursRecettes">
+
+        </div>
             <ul>
                 {% for recipe in recipes %}
                     <div class="accesRecette">

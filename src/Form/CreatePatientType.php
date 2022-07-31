@@ -10,6 +10,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
@@ -21,16 +22,25 @@ class CreatePatientType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email')
+            ->add('email', TextType::class, [
+                'label' => 'Votre email : ',
+                'attr' => array(
+                    'placeholder' => 'jaimebienlespatates@exemple.com')
+            ])
             ->add('agreeTerms', CheckboxType::class, [
+                'label' => 'Accepter les thermes du contrat',
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous devez accepter les thermes du contrat.',
                     ]),
                 ],
             ])
-            ->add('username')
+            ->add('username', TextType::class, [
+                'label' => 'Votre nom d\'utilisateur : ',
+                'attr' => array(
+                    'placeholder' => 'Dubois')
+            ])
             ->add('regime', EntityType::class, array(
                 'class' => Regime::class,
                 'expanded' => true,
@@ -38,6 +48,7 @@ class CreatePatientType extends AbstractType
                 'required' => false,
                 'empty_data'=>true,
                 'mapped' => false,
+
             ))
             ->add('allergenes', EntityType::class,
                 array(
@@ -62,7 +73,10 @@ class CreatePatientType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('save', SubmitType::class);
+            ->add('save', SubmitType::class, array(
+                'label' => 'Creer Patient',
+                'attr' => array('class' => 'button-33')
+            ));
     }
 
     public function configureOptions(OptionsResolver $resolver): void

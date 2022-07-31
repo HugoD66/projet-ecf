@@ -42,9 +42,10 @@ class ContactUsType extends AbstractType
                 'attr' => array(
                     'placeholder' => 'Je me permet de vous contacter afin de vous féliciter pour la création de votre site')
             ])
-            ->add('submit', SubmitType::class, [
-                'label' => 'Enregistrer'
-            ]);
+            ->add('save', SubmitType::class, array(
+                'label' => 'Nous contacter',
+                'attr' => array('class' => 'button-33')
+            ));
         ;
     }
 

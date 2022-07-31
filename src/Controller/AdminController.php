@@ -23,13 +23,18 @@ class AdminController extends AbstractController
 
         $user = $doctrine->getRepository(User::class)->find($id);
         $contact = $doctrine->getRepository(ContactUs::class)->getContactUsList();
+        $countpatients = $doctrine->getRepository(User::class)->countPatient();
+        $countUser = $doctrine->getRepository(User::class)->countUser();
 
         return $this->render('gestion/admin.html.twig', [
             'title' => 'Mangez-Sain! Profil',
             'utilisateur' => $utilisateur,
             'user' => $user,
-            'contact' => $contact
-            ]);
+            'contact' => $contact,
+            'countpatients'  => $countpatients[0][1],
+            'countUser' => $countUser[0][1],
+
+        ]);
     }
     #[Route('/admin/contact-us/{id}', name: 'delete_form')]
     public function remove(ManagerRegistry $doctrine,int $id): Response
