@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ContactUsController extends AbstractController
 {
     #[Route('/contact-us', name: 'app_contact_us')]
-    public function index(Request $request,  EntityManagerInterface $entityManager): Response
+    public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $utilisateur = $this->getUser();
 

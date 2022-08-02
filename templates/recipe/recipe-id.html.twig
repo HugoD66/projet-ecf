@@ -5,11 +5,9 @@
 {% block body %}
     <div class="recipeId">
         <h2>{{ id }}</h2>
-
         <div class="image" id="imageRecipe">
             {% if id.getPicture() %}<img alt="Photographie de la recette" src="{{ asset('pictures/recipe-picture/' ~ id.getPicture()) }} ">{% endif %}
         </div>
-
         <ul>
             <li>Titre : {{ id.title }}</li>
             <li>Description : {{ id.description }}</li>
@@ -18,13 +16,25 @@
             <li>Temps de cuisson : {{ id.heatTime }}</li>
             <li>Liste des ingrédients : {{ id.ingredients }}</li>
             <li>Nombre d'étapes: {{ id.steps }}</li>
-            <li>Allergène: {{ allergene.recipAllergene }}</li>
-
             <!-- regime et allergenes -->
-
+            <li>{{ id.regimeList }}</li>
+            {{ app.user.username }}
         </ul>
-
-
+{{ form(form) }}
     </div>
+{% endblock %}
+{% block javascripts %}
+<script type="text/javascript">
+    window.addEventListener("load", function(event) {
+        document.querySelector("form").addEventListener("click", submit);
+    });
+    function ajaxSend (event, xhr, opt) {
+        event.preventDefault();
+        onformdata(undefined).submit();
+
+        console.log("okok");
+    }
+</script>
+
 
 {% endblock %}

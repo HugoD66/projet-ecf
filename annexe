@@ -1,29 +1,17 @@
-id
+RECIPTYPE
 
-            {%  if is_granted('ROLE_ADMIN') %}
-                <button type="button" class="btn" id="footer-btn"><a href="{{ path('app_profil') }}">Votre compte</a></button>
-            {% elseif is_granted('ROLE_PATIENT') %}
-                <button type="button" class="btn" id="footer-btn"><a href="{{ path('app_profil') }}">Votre compte</a></button>
-            {% elseif is_granted('ROLE_USER') %}
-                <button type="button" class="btn" id="footer-btn"><a href="{{ path('app_profil') }}">Votre compte</a></button>
-            {% endif %}
+=>
 
-<!--
-            <button type="button" class="btn"><a href="{{ path('app_register') }}">Enregistrement</a></button>
-
-            <button type="button" class="btn"  id="btn-up-circle"> Nos formules</button>
-
-            <button type="button" class="btn"> <a href="{{ path('app_profil') }}">Votre compte </a></button>
--->
+EntityType::class, [
+                'class' => Allergene::class,
+                'expanded' => true,
+                'multiple' => true,
+                'required' => false,
+                'empty_data'=>true,
+                'mapped' => false,
+                'label' => 'Allergènes contenu dans le plat :'
+de allergene
 
 
-        $user = $doctrine->getRepository(User::class)->find($id);
-            'user' => $user
-
-
-
-PAGE ADMIN
-                {% for getPatientList in getPatientLists %}
-
-                {{ getPatientLists }}
-                {% endfor %}
+CollectionType::class, [
+                "entry_type" => AllergeneType::class,

@@ -11166,9 +11166,19 @@ header .navbar button:hover {
 section {
   background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
 }
-section .intro {
-  display: flex;
-  justify-content: center;
+section .carousel-home {
+  margin: auto;
+  width: 90%;
+  border-radius: 15%;
+}
+section .carousel-home h1, section .carousel-home .h1 {
+  font-size: 80px;
+  font-family: FreeMono, monospace;
+}
+section .carousel-home img {
+  min-width: 100%;
+  min-height: 100%;
+  margin: auto;
 }
 section img {
   margin-top: 20px;
@@ -11196,7 +11206,7 @@ section .promo .promo1, section .promo .promo3 {
   flex-direction: row;
   align-items: center;
   width: 80%;
-  margin: auto;
+  margin: auto 5% auto auto;
 }
 section .promo .promo2, section .promo .promo4 {
   display: flex;
@@ -11268,10 +11278,14 @@ section .mentionPolitiqueContact {
   align-items: center;
   margin: auto;
 }
+section .mentionPolitiqueContact .inscription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 section .mentionPolitiqueContact .inscription .button-33 {
-  position: relative;
   height: 120px;
-  margin-left: 37%;
   font-size: 26px;
 }
 section .mentionPolitiqueContact .mentionPolitiqueHome .buttons {
@@ -11372,7 +11386,7 @@ section .recette h3, section .recette .h3 {
   color: #7a3c3c;
 }
 
-.connexion, .redirectRegister, .register, .dejaInscrit, .contact-us, .formulaire-recipe {
+.connexion, .redirectRegister, .register, .create-patient-register, .dejaInscrit, .contact-us, .formulaire-recipe {
   background-image: linear-gradient(to bottom, #ffe8d6, #d9c7af, #b2a88a, #898a69, #616e4c);
   display: flex;
   height: 77vh;
@@ -11382,26 +11396,26 @@ section .recette h3, section .recette .h3 {
   flex-direction: column;
   width: 100%;
 }
-.connexion img, .redirectRegister img, .register img, .dejaInscrit img, .contact-us img, .formulaire-recipe img {
+.connexion img, .redirectRegister img, .register img, .create-patient-register img, .dejaInscrit img, .contact-us img, .formulaire-recipe img {
   width: 250px;
   height: 250px;
 }
-.connexion p, .redirectRegister p, .register p, .dejaInscrit p, .contact-us p, .formulaire-recipe p {
+.connexion p, .redirectRegister p, .register p, .create-patient-register p, .dejaInscrit p, .contact-us p, .formulaire-recipe p {
   text-align: end;
   margin-right: 40px;
 }
-.connexion form, .redirectRegister form, .register form, .dejaInscrit form, .contact-us form, .formulaire-recipe form {
+.connexion form, .redirectRegister form, .register form, .create-patient-register form, .dejaInscrit form, .contact-us form, .formulaire-recipe form {
   flex-direction: row;
   width: 65%;
 }
-.connexion .email, .connexion .buttonLogin, .connexion .password, .redirectRegister .email, .redirectRegister .buttonLogin, .redirectRegister .password, .register .email, .register .buttonLogin, .register .password, .dejaInscrit .email, .dejaInscrit .buttonLogin, .dejaInscrit .password, .contact-us .email, .contact-us .buttonLogin, .contact-us .password, .formulaire-recipe .email, .formulaire-recipe .buttonLogin, .formulaire-recipe .password {
+.connexion .email, .connexion .buttonLogin, .connexion .password, .redirectRegister .email, .redirectRegister .buttonLogin, .redirectRegister .password, .register .email, .register .buttonLogin, .register .password, .create-patient-register .email, .create-patient-register .buttonLogin, .create-patient-register .password, .dejaInscrit .email, .dejaInscrit .buttonLogin, .dejaInscrit .password, .contact-us .email, .contact-us .buttonLogin, .contact-us .password, .formulaire-recipe .email, .formulaire-recipe .buttonLogin, .formulaire-recipe .password {
   margin: 30px;
   text-align: start;
 }
-.connexion .email input, .connexion .buttonLogin input, .connexion .password input, .redirectRegister .email input, .redirectRegister .buttonLogin input, .redirectRegister .password input, .register .email input, .register .buttonLogin input, .register .password input, .dejaInscrit .email input, .dejaInscrit .buttonLogin input, .dejaInscrit .password input, .contact-us .email input, .contact-us .buttonLogin input, .contact-us .password input, .formulaire-recipe .email input, .formulaire-recipe .buttonLogin input, .formulaire-recipe .password input {
+.connexion .email input, .connexion .buttonLogin input, .connexion .password input, .redirectRegister .email input, .redirectRegister .buttonLogin input, .redirectRegister .password input, .register .email input, .register .buttonLogin input, .register .password input, .create-patient-register .email input, .create-patient-register .buttonLogin input, .create-patient-register .password input, .dejaInscrit .email input, .dejaInscrit .buttonLogin input, .dejaInscrit .password input, .contact-us .email input, .contact-us .buttonLogin input, .contact-us .password input, .formulaire-recipe .email input, .formulaire-recipe .buttonLogin input, .formulaire-recipe .password input {
   float: right;
 }
-.connexion .email .button-34, .connexion .buttonLogin .button-34, .connexion .password .button-34, .redirectRegister .email .button-34, .redirectRegister .buttonLogin .button-34, .redirectRegister .password .button-34, .register .email .button-34, .register .buttonLogin .button-34, .register .password .button-34, .dejaInscrit .email .button-34, .dejaInscrit .buttonLogin .button-34, .dejaInscrit .password .button-34, .contact-us .email .button-34, .contact-us .buttonLogin .button-34, .contact-us .password .button-34, .formulaire-recipe .email .button-34, .formulaire-recipe .buttonLogin .button-34, .formulaire-recipe .password .button-34 {
+.connexion .email .button-34, .connexion .buttonLogin .button-34, .connexion .password .button-34, .redirectRegister .email .button-34, .redirectRegister .buttonLogin .button-34, .redirectRegister .password .button-34, .register .email .button-34, .register .buttonLogin .button-34, .register .password .button-34, .create-patient-register .email .button-34, .create-patient-register .buttonLogin .button-34, .create-patient-register .password .button-34, .dejaInscrit .email .button-34, .dejaInscrit .buttonLogin .button-34, .dejaInscrit .password .button-34, .contact-us .email .button-34, .contact-us .buttonLogin .button-34, .contact-us .password .button-34, .formulaire-recipe .email .button-34, .formulaire-recipe .buttonLogin .button-34, .formulaire-recipe .password .button-34 {
   height: 80px;
   width: 200px;
   margin: 30px;
@@ -11423,15 +11437,15 @@ section .recette h3, section .recette .h3 {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-.connexion .email .button-34:hover, .connexion .buttonLogin .button-34:hover, .connexion .password .button-34:hover, .redirectRegister .email .button-34:hover, .redirectRegister .buttonLogin .button-34:hover, .redirectRegister .password .button-34:hover, .register .email .button-34:hover, .register .buttonLogin .button-34:hover, .register .password .button-34:hover, .dejaInscrit .email .button-34:hover, .dejaInscrit .buttonLogin .button-34:hover, .dejaInscrit .password .button-34:hover, .contact-us .email .button-34:hover, .contact-us .buttonLogin .button-34:hover, .contact-us .password .button-34:hover, .formulaire-recipe .email .button-34:hover, .formulaire-recipe .buttonLogin .button-34:hover, .formulaire-recipe .password .button-34:hover {
+.connexion .email .button-34:hover, .connexion .buttonLogin .button-34:hover, .connexion .password .button-34:hover, .redirectRegister .email .button-34:hover, .redirectRegister .buttonLogin .button-34:hover, .redirectRegister .password .button-34:hover, .register .email .button-34:hover, .register .buttonLogin .button-34:hover, .register .password .button-34:hover, .create-patient-register .email .button-34:hover, .create-patient-register .buttonLogin .button-34:hover, .create-patient-register .password .button-34:hover, .dejaInscrit .email .button-34:hover, .dejaInscrit .buttonLogin .button-34:hover, .dejaInscrit .password .button-34:hover, .contact-us .email .button-34:hover, .contact-us .buttonLogin .button-34:hover, .contact-us .password .button-34:hover, .formulaire-recipe .email .button-34:hover, .formulaire-recipe .buttonLogin .button-34:hover, .formulaire-recipe .password .button-34:hover {
   box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset, rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px, rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px, rgba(44, 187, 99, 0.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
-.connexion .registerFlex, .redirectRegister .registerFlex, .register .registerFlex, .dejaInscrit .registerFlex, .contact-us .registerFlex, .formulaire-recipe .registerFlex {
+.connexion .registerFlex, .redirectRegister .registerFlex, .register .registerFlex, .create-patient-register .registerFlex, .dejaInscrit .registerFlex, .contact-us .registerFlex, .formulaire-recipe .registerFlex {
   display: flex;
 }
 
-.register {
+.register, .create-patient-register {
   font-family: Consolas, sans-serif;
 }
 
@@ -11441,6 +11455,10 @@ section .recette h3, section .recette .h3 {
   font-family: Franklin Gothic, sans-serif;
   color: rgba(56, 56, 56, 0.94);
   font-weight: bolder;
+}
+
+.create-patient-register {
+  height: 130vh;
 }
 
 h2, .h2 {
@@ -11505,8 +11523,12 @@ h2, .h2 {
   color: rgba(56, 56, 56, 0.94);
 }
 
+.connexion {
+  height: 73vh;
+}
+
 .formulaire-recipe {
-  height: 140vh;
+  height: 150vh;
 }
 
 .recettes {
@@ -11551,6 +11573,15 @@ h2, .h2 {
 .gestion-admin h2, .gestion-admin .h2 {
   margin-top: 0;
 }
+.gestion-admin h3, .gestion-admin .h3 {
+  font-size: 50px;
+  text-decoration: underline solid rgba(81, 51, 43, 0.94);
+  text-shadow: 2px 4px 3px rgba(81, 51, 43, 0.94);
+  text-align: center;
+  font-family: Courier New, serif;
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
 .gestion-admin .patientGestionAdmin1, .gestion-admin .patientGestionAdmin2, .gestion-admin .patientGestionAdmin3 {
   font-family: Franklin Gothic, sans-serif;
   align-items: center;
@@ -11584,6 +11615,8 @@ h2, .h2 {
   text-shadow: 2px 4px 3px rgba(81, 51, 43, 0.94);
   text-align: center;
   font-family: Courier New, serif;
+  margin-top: 60px;
+  margin-bottom: 50px;
 }
 .allergeneRegime h4, .allergeneRegime .h4 {
   text-decoration: underline 1px solid black;
@@ -11597,10 +11630,6 @@ h2, .h2 {
 .allergeneRegime form {
   width: 80%;
 }
-.allergeneRegime h3, .allergeneRegime .h3 {
-  margin-top: 60px;
-  margin-bottom: 50px;
-}
 
 .checkboxTest {
   height: 24px;
@@ -11612,9 +11641,9 @@ h2, .h2 {
 
 .card {
   margin-bottom: 5%;
-  width: 45%;
   background-color: rgba(126, 143, 105, 0.36);
   box-shadow: 5px 5px 17px 5px #000000;
+  width: 80%;
 }
 .card .card-body {
   margin: 15px;
@@ -11630,6 +11659,50 @@ h2, .h2 {
   font-family: Consolas, sans-serif;
   font-weight: bold;
   font-size: 20px;
+}
+
+@media screen and (min-width: 1100px) {
+  .recettes-mediaquery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    vertical-align: top;
+    justify-content: center;
+  }
+
+  .card {
+    width: 25%;
+    margin: 60px;
+  }
+
+  h2, .h2 {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 900px) {
+  section .carousel-home {
+    width: 75%;
+  }
+  section .formulaire-recipe {
+    height: 210vh;
+  }
+
+  .recettes {
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100vh;
+  }
+
+  .formulaire-recipe {
+    height: 220vh;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .formulaire-recipe {
+    height: 200vh;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

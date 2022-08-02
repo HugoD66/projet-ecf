@@ -4,9 +4,53 @@
 
 {% block body %}
     <section>
-        <div class="intro">
-            <img alt="dessin gateau" src="{{ asset('pictures/image-intro/img-intro.png') }}">
+
+        <div class="carousel-home">
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container-carousel">
+                            <img src="{{ asset('pictures/slidebar/slidebar-1.avif') }}" alt="slidebar image 1">
+
+                            <div class="carousel-caption text-start">
+                                <h1>Manger Bien</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container-carousel">
+                            <img src="{{ asset('pictures/slidebar/slidebar-2.avif') }}" alt="slidebar image 2">
+                            <div class="carousel-caption">
+                                <h1>C'est</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container-carousel">
+                            <img src="{{ asset('pictures/slidebar/slidebar-3.avif') }}" alt="slidebar image 3">
+                            <div class="carousel-caption text-end">
+                                <h1>Manger Sain</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
+
+
         <div class="services" id="btn-href-services">
             <h2 class="titre-sec">Mes services</h2>
             <p>Dans un cadre calme et apaisant, mon engagement est de vous donner les clefs afin d’atteindre vos objectifs et découvrir l’alimentation qui vous permettra de prendre plaisir à manger gourmand, sain et équilibré.</p>
@@ -29,7 +73,7 @@
             <div class="promo3">
                 <img src="{{ asset('pictures/section-promo/suivi-diet.jpg') }}" alt="Plat de pasta">
                 <div class="explain">
-                    <h3>Suivi en diététique/nutrition</h3>
+                    <h3>Suivi en diététique</h3>
                         <p>Je vous propose de vous accompagner </br>toutes les semaines pour perdre </br>du poids (600g à 1kg / semaine). </br>Une perte de poids durable avec </br>les phases de stabilisation </br>et d’entretien.</p>
                 </div>
             </div>

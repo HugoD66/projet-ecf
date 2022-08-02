@@ -15,20 +15,14 @@
     <body>
 
     <header>
-
         <a  href="{{ path('app_home') }}"><img alt="logo" src="{{ asset('pictures/icone-logo/logo-back-beige.png') }}" width="250" height="200"></a>
-
         <div class="navbar">
-
             {% if app.user %}
                 <button type="button" class="btn"><a href="{{ path('app_logout') }}">Déconnexion</a></button>
             {% else %}
                 <button type="button" class="btn"><a href="{{ path('app_login') }}">Connexion</a></button>
             {% endif %}
-
-
             <button type="button" class="btn"> <a href="{{ path('app_contact_us') }}">Contact </a></button>
-
             {% if app.user %}
                 {%  if is_granted('ROLE_ADMIN') %}
                     <button type="button" class="btn"><a href="{{ path('app_admin', { 'id': utilisateur.id}) }}">Votre compte</a></button>
@@ -38,9 +32,7 @@
                     <button type="button" class="btn"><a href="{{ path('app_user', { 'id': utilisateur.id}) }}">Votre compte</a></button>
                 {% endif %}
             {% else %}
-
             {% endif %}
-
         </div>
         {% if path('app_home') == false %}
             <a href="{{ path('app_home') }}">

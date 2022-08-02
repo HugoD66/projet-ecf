@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Allergene;
 use App\Entity\Recipe;
 use App\Entity\Regime;
+use phpDocumentor\Reflection\Types\Collection;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -73,7 +74,7 @@ class CreateRecipeType extends AbstractType
                 'label' => 'Une photo du plat ? '
 
             ])
-            ->add('allergene', EntityType::class, [
+            ->add('allergene', Collection::class, [
                 'class' => Allergene::class,
                 'expanded' => true,
                 'multiple' => true,
@@ -85,9 +86,12 @@ class CreateRecipeType extends AbstractType
             ])
 
             ->add('isAccessibleUser', CheckboxType::class, [
-                'label' => 'Accessible seulement pour les Patients ? ',
+                'label' => 'Accessible pour tous ? ',
+                'required' => false,
+
                 'attr' => array(
-                    'class' => 'checkboxTest')
+                    'class' => 'checkboxTest',
+                )
             ])
             ->add('save', SubmitType::class, array(
                 'label' => 'Création Allergène',

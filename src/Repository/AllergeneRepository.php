@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Allergene;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Form\FormTypeInterface;
 
 /**
  * @extends ServiceEntityRepository<Allergene>

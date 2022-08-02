@@ -24,4 +24,5 @@ class AllRecipeController extends AbstractController
 
         ]);
     }
+
 }

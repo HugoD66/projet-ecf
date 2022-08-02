@@ -84,4 +84,6 @@ class Allergene
 
         return $this;
     }
+
+
 }

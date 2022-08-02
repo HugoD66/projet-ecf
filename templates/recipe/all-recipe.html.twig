@@ -1,31 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AllRecipeController!{% endblock %}
+{% block title %}{{title}}{% endblock %}
 
 {% block body %}
     <div class="recettes">
         <h2>Toutes mes recettes</h2>
-        <ul>
-            {% for recipe in recipes %}
-                <div class="accesRecette">
-                    {% if recipe.isAccessibleUser == true %}
 
-                        <h4>•<a href="{{ path('app_recipe', {'id': '1'}) }}"> {{ recipe.title }} </a></h4>
-                        <p>{{ recipe.description }}</p>
-                        {% if recipe.getPicture() %}
-                            <img class="imageRecette" alt="Photographie de la recette" src="{{ asset('pictures/recipe-picture/' ~ recipe.getPicture()) }} ">
-                        {% endif %}
-                    {% else %}
-                    {% endif %}
+        <div class="recettes-mediaquery">
+
+        {% for recipe in recipes %}
+            {% if recipe.isAccessibleUser == true %}
+                <div class="card">
+                    <img src="{{ asset('pictures/recipe-picture/' ~ recipe.getPicture()) }} " class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4>•<a class="card-title" href="{{ path('app_recipe', {'id': '1'}) }}"> {{ recipe.title }} </a></h4>
+                        <p class="card-text">{{ recipe.description|u.truncate(100) }}</p>
+                        <ul>
+                            <li>Nombre d'étapes : {{ recipe.steps }}</li>
+                            <li>Temps de cuisson : {{ recipe.heatTime }}</li>
+                            <li>Temps de préparation : {{ recipe.cookingTime }}</li>
+
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <a href="{{ path('app_recipe', {'id': '1'}) }}" class="card-link">Lien de la recette</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
                 </div>
-            {% endfor %}
-        </ul>
+            {% else %}
+            {% endif %}
+        {% endfor %}
+        </div>
 
+        {% if app.user == false %}
+            <div class="inscrirePourIntegralitee">
+                <p><i>Inscrivez vous, puis faites parti de nos patients pour avoir accés à <br>l'intégralitée des recettes !</i></p><br>
+                {% if  app.user is not null %}
+                    <button class="button-33" role="button"><a href="{{ path('app_deja_inscrit') }}">Inscription</a></button>
+                {% else %}
+                    <button class="button-33" role="button"><a href="{{ path('app_register') }}">Inscription</a></button>
+                {% endif %}
+            </div>
+        {% else %}
         {% endif %}
         {%  if is_granted('ROLE_ADMIN') %}
             <button type="button" style="margin-left: 20%;" class="button-33"><a href="{{ path('app_add_recipe') }}">Créer un nouveau plat</a></button>
+            <br>
         {% else %}
         {% endif %}
-        <br>
     </div>
 {% endblock %}

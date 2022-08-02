@@ -43,12 +43,9 @@ class CreatePatientType extends AbstractType
             ])
             ->add('regime', EntityType::class, array(
                 'class' => Regime::class,
-                'expanded' => true,
-                'multiple' => true,
-                'required' => false,
+                'expanded' => false,
+                'multiple' => false,
                 'empty_data'=>true,
-                'mapped' => false,
-
             ))
             ->add('allergenes', EntityType::class,
                 array(
